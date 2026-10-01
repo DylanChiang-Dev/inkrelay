@@ -1,6 +1,6 @@
 # InkRelay｜墨流
 
-**v0.0.3 · 流程 Skill · MIT**
+**v0.0.4 · 流程 Skill · MIT**
 
 將原始資料或短文，整理成可審核的核心內容，再規劃圖卡與文字影片的製作、檢查及交付。
 
@@ -14,7 +14,7 @@
 - 依來源選擇觀點、步驟或對照布局；每頁先記錄角色、核心資訊與理由，整組保持同一品牌。
 - 用最多五行說明設計選擇，沿用品牌；背景與標記須對應內容，不把通用美學偏好當成禁令。
 - 文字影片：9:16、1080 × 1920、30fps，獨立排版、換頁及閱讀停留時間；預設無旁白。
-- 按需求製作繁簡版本；檢查文字、作者識別、可讀性、素材授權與實際成品。
+- 按需求製作繁簡版本；先查正確性，再查實際呈現，優先局部精修，保存問題／修正／重查結果；未檢視項目如實標記待驗證。
 - 作者、定位、語言、視覺風格及工具皆可設定；米白科技編輯風只是起步建議，不綁定任何人的品牌。
 
 首版不附背景圖、字型、音樂、API 金鑰或第三方技能，不自動選題、使用付費服務、發布或排程，也不取代既有的長文轉影片流程。
@@ -33,7 +33,7 @@
     printf '%s\n' '同名倉庫或技能已存在，請先確認，不覆寫。' >&2
     exit 1
   fi
-  git clone --branch v0.0.3 --depth 1 https://github.com/DylanChiang-Dev/inkrelay.git inkrelay
+  git clone --branch v0.0.4 --depth 1 https://github.com/DylanChiang-Dev/inkrelay.git inkrelay
   mkdir -p .agents/skills
   ln -s "$(pwd)/inkrelay/skills/inkrelay" .agents/skills/inkrelay
 )
@@ -70,9 +70,9 @@
 
 ## 驗證與迭代
 
-v0.0.3 的版本識別位於技能 frontmatter 與 Git tag。技能入口在 [`skills/inkrelay/SKILL.md`](skills/inkrelay/SKILL.md)；視覺、製作與交付細節按需讀取 references。
+v0.0.4 的版本識別位於技能 frontmatter 與 Git tag。技能入口在 [`skills/inkrelay/SKILL.md`](skills/inkrelay/SKILL.md)；視覺、製作與交付細節按需讀取 references。
 
-本版驗證包含 Skill 結構、引用、設定，以及六種基礎情境＋五種布局情境＋四種設計理由情境的人工流程走查；詳見 [走查紀錄](tests/scenarios.md)。這不是獨立模型行為評測或固定樣板／完整影片渲染驗收。每個小迭代分別提交、打版本 tag，保留歷史版本，不引入其他人的完整技能或工程。
+本版驗證包含 Skill 結構、引用、設定，以及六種基礎情境＋五種布局情境＋四種設計理由情境＋四種第二輪精修情境，共 19 種人工流程走查；詳見 [走查紀錄](tests/scenarios.md)。這不是獨立模型行為評測或固定樣板／完整影片渲染驗收。每個小迭代分別提交、打版本 tag，保留歷史版本，不引入其他人的完整技能或工程。
 
 ## 迭代紀錄
 
@@ -81,6 +81,7 @@ v0.0.3 的版本識別位於技能 frontmatter 與 Git tag。技能入口在 [`s
 | v0.0.1 | 核心短內容、形式確認、製作及交付流程 |
 | v0.0.2 | 內容決定布局：觀點卡、步驟卡、對照卡與頁面規劃 |
 | v0.0.3 | 設計選擇有理由：最多五行、沿用品牌、檢查背景與裝飾作用 |
+| v0.0.4 | 交付前第二輪精修：正確性／呈現分輪、局部修正與實際重查 |
 
 ## 方法參考
 
@@ -89,5 +90,7 @@ v0.0.3 的版本識別位於技能 frontmatter 與 Git tag。技能入口在 [`s
 - v0.0.2：baoyu-xhs-images 的風格／布局／配色分離與資訊布局概念。查核日期：2026-10-01；固定來源：https://github.com/JimLiu/baoyu-skills/blob/b0ac5233ccc289fefabe4d5b7946bce14e4f9f26/skills/baoyu-xhs-images/SKILL.md 。不採用其禁止程式排版的限制。
 
 - v0.0.3：frontend-design 的題材／受眾導向、設計選擇與裝飾作用檢查。查核日期：2026-10-01；固定來源：https://github.com/anthropics/skills/blob/41bbe19d1a1a7eaab5e7bb9050a417e5c6cffc8f/skills/frontend-design/SKILL.md 。使用者已指定風格優先，不照搬字體或布局禁令。
+
+- v0.0.4：canvas-design 的第二輪檢視與精修既有構圖。查核日期：2026-10-01；固定來源：https://github.com/anthropics/skills/blob/ef740771ac901e03fbca3ce4e1c453a96010f30a/skills/canvas-design/SKILL.md 。不採用其少文字或藝術品優先要求，不預設反覆付費生成。
 
 本倉庫採 MIT 授權；外部素材與製作工具的授權需分別確認，MIT 不代替第三方授權。
