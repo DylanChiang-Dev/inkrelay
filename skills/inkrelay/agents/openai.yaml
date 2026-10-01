@@ -1,4 +1,4 @@
 interface:
   display_name: "InkRelay｜墨流"
-  short_description: "先確認一份短文，供文字平台使用並按需派生圖卡或本人推文卡片式影片"
-  default_prompt: "使用 $inkrelay 處理這份資料，先完成或沿用一份核心短文；只在我需要時派生圖卡或影片，沿用已有作者與品牌設定。"
+  short_description: "協作自媒體長文的研究起稿與過稿，或單份短文按需派生圖卡與影片"
+  default_prompt: "使用 $inkrelay 處理這份資料，依我已指定的長文或短文目標接續，沿用已有作者聲音與材料；先交核心稿審閱，不自動產生其他形式或發布。"
