@@ -1,16 +1,17 @@
 # InkRelay｜墨流
 
-**v0.0.1 · 流程 Skill · MIT**
+**v0.0.2 · 流程 Skill · MIT**
 
 將原始資料或短文，整理成可審核的核心內容，再規劃圖卡與文字影片的製作、檢查及交付。
 
 > 首版提供 Agent 工作流程與製作規格，**不是一鍵生成工具，也不包含固定渲染器**。圖片、影片及預覽依賴使用者環境中已有且獲准使用的工具；沒有工具時，交付已完成的文字與製作規劃並說明缺項。
 
-## 首版能力
+## 目前能力
 
 - 接續原始資料、未確認草稿或已核准短文，不重問已有的作者與品牌資料。
 - 先確認核心文字與輸出形式，再安排封面、內頁或影片分鏡。
 - 圖卡：3:4、1080 × 1440 PNG，支援單張或封面＋內容頁。
+- 依來源選擇觀點、步驟或對照布局；每頁先記錄角色、核心資訊與理由，整組保持同一品牌。
 - 文字影片：9:16、1080 × 1920、30fps，獨立排版、換頁及閱讀停留時間；預設無旁白。
 - 按需求製作繁簡版本；檢查文字、作者識別、可讀性、素材授權與實際成品。
 - 作者、定位、語言、視覺風格及工具皆可設定；米白科技編輯風只是起步建議，不綁定任何人的品牌。
@@ -31,7 +32,7 @@
     printf '%s\n' '同名倉庫或技能已存在，請先確認，不覆寫。' >&2
     exit 1
   fi
-  git clone --branch v0.0.1 --depth 1 https://github.com/DylanChiang-Dev/inkrelay.git inkrelay
+  git clone --branch v0.0.2 --depth 1 https://github.com/DylanChiang-Dev/inkrelay.git inkrelay
   mkdir -p .agents/skills
   ln -s "$(pwd)/inkrelay/skills/inkrelay" .agents/skills/inkrelay
 )
@@ -68,8 +69,21 @@
 
 ## 驗證與迭代
 
-v0.0.1 的版本識別位於技能 frontmatter 與 Git tag。技能入口在 [`skills/inkrelay/SKILL.md`](skills/inkrelay/SKILL.md)；視覺、製作與交付細節按需讀取 references。
+v0.0.2 的版本識別位於技能 frontmatter 與 Git tag。技能入口在 [`skills/inkrelay/SKILL.md`](skills/inkrelay/SKILL.md)；視覺、製作與交付細節按需讀取 references。
 
-首版驗證範圍是 Skill 結構、引用、設定及六種工作流程的人工走查，不代表固定樣板或完整影片渲染已通過驗收。後續依實際使用問題逐項迭代，不先引入其他人的技能或工程。
+本版驗證包含 Skill 結構、引用、設定，以及六種基礎情境＋五種布局情境的人工流程走查；詳見 [走查紀錄](tests/scenarios.md)。這不是獨立模型行為評測或固定樣板／完整影片渲染驗收。每個小迭代分別提交、打版本 tag，保留歷史版本，不引入其他人的完整技能或工程。
+
+## 迭代紀錄
+
+| 版本 | 單一主要改進 |
+|---|---|
+| v0.0.1 | 核心短內容、形式確認、製作及交付流程 |
+| v0.0.2 | 內容決定布局：觀點卡、步驟卡、對照卡與頁面規劃 |
+
+## 方法參考
+
+以下只借鑑方法，以原創指引整合；不包含第三方程式、資產或完整 Skill。
+
+- v0.0.2：baoyu-xhs-images 的風格／布局／配色分離與資訊布局概念。查核日期：2026-10-01；固定來源：https://github.com/JimLiu/baoyu-skills/blob/b0ac5233ccc289fefabe4d5b7946bce14e4f9f26/skills/baoyu-xhs-images/SKILL.md 。不採用其禁止程式排版的限制。
 
 本倉庫採 MIT 授權；外部素材與製作工具的授權需分別確認，MIT 不代替第三方授權。
