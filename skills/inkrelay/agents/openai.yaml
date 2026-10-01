@@ -1,0 +1,4 @@
+interface:
+  display_name: "InkRelay｜墨流"
+  short_description: "將已確認的短內容整理成圖卡與文字影片製作流程，保留作者與品牌設定"
+  default_prompt: "使用 $inkrelay 處理這份資料，沿用已有作者與品牌設定，先確認文字與本篇輸出形式，再規劃圖卡或影片製作。"
