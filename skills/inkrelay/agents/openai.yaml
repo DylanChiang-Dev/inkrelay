@@ -1,4 +1,4 @@
 interface:
   display_name: "InkRelay｜墨流"
-  short_description: "協作長文起稿過稿與按需直接生成橫向封面，或短文派生圖卡與影片"
+  short_description: "協作長文起稿過稿與按需生成完整有字封面，或短文派生圖卡與影片"
   default_prompt: "使用 $inkrelay 處理這份資料，依我已指定的長文或短文目標接續，沿用已有作者聲音與材料；先交核心稿審閱，不自動產生其他形式或發布。"
