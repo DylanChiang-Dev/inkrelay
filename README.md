@@ -1,8 +1,8 @@
 # InkRelay｜墨流
 
-**v0.0.11 · 流程 Skill · MIT**
+**v0.0.12 · 流程 Skill · MIT**
 
-本版新增標題與內容承諾檢查：只核對本次需要的標題、封面與開頭，對回正文支持範圍；精確文字已確認時不擅改。
+本版新增實質論證推進檢查：重要轉折需有接續理由，優先處理錯位、冗段或缺前提；不以空泛橋接或強制懸念掩蓋斷點。
 
 既有作者 IP 導向的封面概念、核准識別及樣稿沿用仍保留。
 
@@ -54,7 +54,7 @@ v0.0.5 單稿分發、v0.0.6 長文模式及 v0.0.8 完整封面生成保留；v
 
 具備讀取 `SKILL.md` 能力的 Agent 可使用本技能。Codex 可在目標專案的 `.agents/skills/` 發現技能；本機可用符號連結維持單一來源，也可在其他環境複製完整的 `skills/inkrelay/` 目錄。
 
-在目標專案根目錄執行以下指令，安裝 **v0.0.11**；若已有同名倉庫或技能，先確認既有內容，不覆寫或刪除：
+在目標專案根目錄執行以下指令，安裝 **v0.0.12**；若已有同名倉庫或技能，先確認既有內容，不覆寫或刪除：
 
 ```sh
 (
@@ -64,7 +64,7 @@ v0.0.5 單稿分發、v0.0.6 長文模式及 v0.0.8 完整封面生成保留；v
     printf '%s\n' '同名倉庫或技能已存在，請先確認，不覆寫。' >&2
     exit 1
   fi
-  git clone --branch v0.0.11 --depth 1 https://github.com/DylanChiang-Dev/inkrelay.git inkrelay
+  git clone --branch v0.0.12 --depth 1 https://github.com/DylanChiang-Dev/inkrelay.git inkrelay
   mkdir -p .agents/skills
   ln -s "$(pwd)/inkrelay/skills/inkrelay" .agents/skills/inkrelay
 )
@@ -133,7 +133,7 @@ v0.0.5 單稿分發、v0.0.6 長文模式及 v0.0.8 完整封面生成保留；v
 
 ## 驗證與迭代
 
-v0.0.11 的版本識別位於技能 frontmatter 與 Git tag；所有歷史 tag 保持不變，不建立 GitHub Release。技能入口在 [`skills/inkrelay/SKILL.md`](skills/inkrelay/SKILL.md)；視覺、製作與交付細節按需讀取 references。
+v0.0.12 的版本識別位於技能 frontmatter 與 Git tag；所有歷史 tag 保持不變，不建立 GitHub Release。技能入口在 [`skills/inkrelay/SKILL.md`](skills/inkrelay/SKILL.md)；視覺、製作與交付細節按需讀取 references。
 
 v0.0.9 保留 60 種人工流程走查的歷史紀錄，詳見 [走查紀錄](tests/scenarios.md)；它們不是獨立模型行為評測。後續迭代分別記錄結構檢查、流程對照及實際試稿，不能沿用舊版「通過」聲稱新能力已驗證。每個小迭代分別提交、打版本 tag，保留歷史版本，不引入其他人的完整技能或工程。
 
@@ -152,6 +152,7 @@ v0.0.9 保留 60 種人工流程走查的歷史紀錄，詳見 [走查紀錄](te
 | v0.0.9 | 作者 IP 導向的概念與提示詞、按需風格討論、核准識別及實際樣稿沿用 |
 | v0.0.10 | 讀者入口獨立檢查；不以後文價值反推開頭有效 |
 | v0.0.11 | 標題、封面與開頭分工；承諾必須由正文支持 |
+| v0.0.12 | 章節與段落接續有實質理由；不以橋接句掩蓋斷點 |
 
 ## 方法參考
 
